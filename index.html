@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opening Hours Prototype</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 24px;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    input {
+      flex: 1;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 8px 14px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .message {
+      margin: 12px 0;
+      font-weight: bold;
+    }
+
+    .hint {
+      margin: 8px 0 12px 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #f5f5f5;
+    }
+
+    .fallback {
+      color: #b00020;
+    }
+  </style>
+</head>
+<body>
+  <h1>Opening Hours Demo</h1>
+
+  <div class="controls">
+    <input id="input" type="text" placeholder="Try: Mo-Fr 09:00-18:00; Sa 10:00-14:00" />
+    <button id="parseBtn" type="button">Parse</button>
+  </div>
+
+  <p class="hint">
+    Supported: simple weekly schedules such as weekday ranges and single-day rules.
+    More complex formats will fall back to raw text.
+  </p>
+
+  <div id="message" class="message"></div>
+  <div id="output"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
